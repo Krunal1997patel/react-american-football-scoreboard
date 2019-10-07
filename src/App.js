@@ -9,6 +9,11 @@ function App() {
   let [home, setHome] = useState(0);
   let [away, setAway] = useState(0);
 
+  function rest(){
+    setAway(0);
+    setHome(0);
+  }
+
   return (
     <div className="container">
       <section className="scoreboard">
@@ -33,6 +38,9 @@ function App() {
           {/* TODO STEP 4 - Now we need to attach our state setter functions to click listeners. */}
           <button className="homeButtons__touchdown" onClick={() => setHome(home + 7)}>Home Touchdown</button>
           <button className="homeButtons__fieldGoal" onClick={() => setHome(home + 3)}>Home Field Goal</button>
+        </div>
+        <div>
+          <button onClick={()=> rest()}>Rest Score</button>
         </div>
         <div className="awayButtons">
           <button className="awayButtons__touchdown" onClick={() => setAway(away+ 7)}>Away Touchdown</button>
